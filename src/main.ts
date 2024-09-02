@@ -4,7 +4,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: '*',
+    origin: 'https://skyblue-hawk-957796.hostingersite.com',
     credentials: true
   });
   await app.listen(3000);
