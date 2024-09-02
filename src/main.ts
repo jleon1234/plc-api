@@ -2,11 +2,11 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule,  { cors: true });
   app.enableCors({
-    origin: 'https://skyblue-hawk-957796.hostingersite.com',
+    origin: '*',
     credentials: true
   });
-  await app.listen(3000);
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
